@@ -1,6 +1,20 @@
 #!/bin/bash
 # required
 sudo apt install vim
+sudo apt remove --purge neovim-runtime neovim
+
+git clone https://github.com/neovim/neovim.git /tmp/neovim
+
+cd /tmp/neovim && sudo cmake --build build/ --target uninstall
+
+git checkout nightly
+make CMAKE_BUILD_TYPE=Release
+cd build && sudo cpack -G DEB && sudo dpkg -i nvim-*.deb
+nvim -V1 -v
+
+rm -rf /tmp/neovim
+cd -
+
 mv ~/.config/nvim{,.bak}
 
 # optional but recommended
