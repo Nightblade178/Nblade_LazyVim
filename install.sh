@@ -1,6 +1,6 @@
 #!/bin/bash
 # required
-sudo apt install vim nvim
+sudo apt install vim
 mv ~/.config/nvim{,.bak}
 
 # optional but recommended
