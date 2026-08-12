@@ -1,9 +1,11 @@
 #!/bin/bash
+set -e # Stops if any error
 # required
 STARTDIR=$(pwd)
 sudo apt install vim cmake lazygit -y
 sudo apt remove --purge neovim-runtime neovim
 
+rm -rf /tmp/neovim
 git clone https://github.com/neovim/neovim.git /tmp/neovim
 
 cd /tmp/neovim && sudo cmake --build build/ --target uninstall
