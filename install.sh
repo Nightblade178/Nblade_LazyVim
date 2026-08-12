@@ -1,6 +1,6 @@
 #!/bin/bash
 # required
-sudo apt install vim cmake -y
+sudo apt install vim cmake lazygit -y
 sudo apt remove --purge neovim-runtime neovim
 
 git clone https://github.com/neovim/neovim.git /tmp/neovim
