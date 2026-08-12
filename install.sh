@@ -8,11 +8,11 @@ sudo apt remove --purge neovim-runtime neovim
 rm -rf /tmp/neovim
 git clone https://github.com/neovim/neovim.git /tmp/neovim
 
-cd /tmp/neovim && sudo cmake --build build/ --target uninstall
+cd /tmp/neovim
 
 git checkout stable
 make CMAKE_BUILD_TYPE=Release
-cd build && sudo cpack -G DEB && sudo dpkg -i nvim-*.deb
+cd build && cpack -G DEB && sudo dpkg -i nvim-*.deb
 nvim -V1 -v
 cd "$STARTDIR"
 
