@@ -11,8 +11,8 @@ git clone https://github.com/neovim/neovim.git /tmp/neovim
 cd /tmp/neovim
 
 git checkout stable
-make CMAKE_BUILD_TYPE=Release
-cd build && cpack -G DEB && sudo dpkg -i nvim-*.deb
+make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local
+sudo make install
 nvim -V1 -v
 cd "$STARTDIR"
 
